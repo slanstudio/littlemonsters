@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/3.1">
+	<id>com.jlq.game.FeedPetGame</id>
+
+	<filename>喂怪兽</filename>
+
+	<name>喂怪兽</name>
+	
+	<versionNumber>1.23.7</versionNumber>
+		         
+	<versionLabel>1.0 alpha 1</versionLabel>
+
+	<!-- <description></description> -->
+
+	<copyright>江龙泉</copyright>
+
+	<!-- <publisherID></publisherID> -->
+
+	<initialWindow>
+		<content>FeedPetGame.swf</content>
+		
+		<!-- <title></title> -->
+
+		<!-- <systemChrome></systemChrome> -->
+
+		<!-- <transparent></transparent> -->
+
+		<!-- <visible></visible> -->
+
+		<!-- <minimizable></minimizable> -->
+
+		<!-- <maximizable></maximizable> -->
+
+		<!-- <resizable></resizable> -->
+
+		<!-- <width></width> -->
+
+		<!-- <height></height> -->
+
+		<!-- <x></x> -->
+
+		<!-- <y></y> -->
+
+		<!-- <minSize></minSize> -->
+
+		<!-- <maxSize></maxSize> -->
+
+        <!-- <aspectRatio></aspectRatio> -->
+
+        <!-- <autoOrients></autoOrients> -->
+
+        <!-- <fullScreen></fullScreen> -->
+
+        <!-- <renderMode></renderMode> -->
+
+		<!-- <softKeyboardBehavior></softKeyboardBehavior> -->
+		<autoOrients>false</autoOrients>
+        <fullScreen>true</fullScreen>
+        <!-- <visible>true</visible> -->
+        <aspectRatio>landscape</aspectRatio>
+    <visible>false</visible>
+    </initialWindow>
+
+	<supportedProfiles>mobileDevice</supportedProfiles>
+
+	<!-- <installFolder></installFolder> -->
+
+	<!-- <programMenuFolder></programMenuFolder> -->
+
+	<icon>
+		<image16x16>com/jlq/game/images/icons/16.png</image16x16>
+		<image32x32>com/jlq/game/images/icons/32.png</image32x32>
+		<image36x36>com/jlq/game/images/icons/36.png</image36x36>
+		<image48x48>com/jlq/game/images/icons/48.png</image48x48>
+		<image57x57>com/jlq/game/images/icons/57.png</image57x57>
+		<image72x72>com/jlq/game/images/icons/72.png</image72x72>
+		<image114x114>com/jlq/game/images/icons/114.png</image114x114>
+		<image128x128>com/jlq/game/images/icons/128.png</image128x128>
+	</icon>
+	<!-- <customUpdateUI></customUpdateUI> -->
+	
+	<!-- <allowBrowserInvocation></allowBrowserInvocation> -->
+
+	<!-- <fileTypes> -->
+
+		<!-- Defines one file type. Optional. -->
+		<!-- <fileType> -->
+
+			<!-- The name that the system displays for the registered file type. Required. -->
+			<!-- <name></name> -->
+
+			<!-- The extension to register. Required. -->
+			<!-- <extension></extension> -->
+			
+			<!-- The description of the file type. Optional. -->
+			<!-- <description></description> -->
+			
+			<!-- The MIME content type. -->
+			<!-- <contentType></contentType> -->
+			
+			<!-- The icon to display for the file type. Optional. -->
+			<!-- <icon>
+				<image16x16></image16x16>
+				<image32x32></image32x32>
+				<image48x48></image48x48>
+				<image128x128></image128x128>
+			</icon> -->
+			
+		<!-- </fileType> -->
+	<!-- </fileTypes> -->
+
+    <!-- iOS specific capabilities -->
+	<!-- <iPhone> -->
+		<!-- A list of plist key/value pairs to be added to the application Info.plist -->
+		<!-- <InfoAdditions>
+            <![CDATA[
+                <key>UIDeviceFamily</key>
+                <array>
+                    <string>1</string>
+                    <string>2</string>
+                </array>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleBlackOpaque</string>
+                <key>UIRequiresPersistentWiFi</key>
+                <string>YES</string>
+            ]]>
+        </InfoAdditions> -->
+        <!-- A list of plist key/value pairs to be added to the application Entitlements.plist -->
+		<!-- <Entitlements>
+            <![CDATA[
+                <key>keychain-access-groups</key>
+                <array>
+                    <string></string>
+                    <string></string>
+                </array>
+            ]]>
+        </Entitlements> -->
+	<!-- Display Resolution for the app (either "standard" or "high"). Optional. Default "standard" -->
+	<!-- <requestedDisplayResolution></requestedDisplayResolution> -->
+	<!-- </iPhone> -->
+
+	<!-- Specify Android specific tags that get passed to AndroidManifest.xml file. -->
+    <!--<android> -->
+    <!--	<manifestAdditions>
+		<![CDATA[
+			<manifest android:installLocation="auto">
+				<uses-permission android:name="android.permission.INTERNET"/>
+				<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+				<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+				<uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>
+				<application android:enabled="true">
+					<activity android:excludeFromRecents="false">
+						<intent-filter>
+							<action android:name="android.intent.action.MAIN"/>
+							<category android:name="android.intent.category.LAUNCHER"/>
+						</intent-filter>
+					</activity>
+				</application>
+            </manifest>
+		]]>
+        </manifestAdditions> -->
+	    <!-- Color depth for the app (either "32bit" or "16bit"). Optional. Default 16bit before namespace 3.0, 32bit after -->
+        <!-- <colorDepth></colorDepth> -->
+    <!-- </android> -->
+	<!-- End of the schema for adding the android specific tags in AndroidManifest.xml file -->
+
+<android>
+        <manifestAdditions><![CDATA[
+			<manifest android:installLocation="preferExternal">
+				<application>
+					<activity 
+           	 			android:configChanges="keyboard|keyboardHidden|orientation"
+            			android:name="net.youmi.android.AdActivity"/>
+				</application>
+			    <uses-permission android:name="android.permission.INTERNET"/>
+			    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+			    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    			<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+			</manifest>
+			
+		]]></manifestAdditions>
+    </android>
+    <iPhone>
+        <InfoAdditions><![CDATA[
+			<key>UIDeviceFamily</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+			</array>
+		]]></InfoAdditions>
+        <requestedDisplayResolution>high</requestedDisplayResolution>
+    </iPhone>
+<extensions>
+        <extensionID>com.jlq.nativeExtensions.android.nativeAds.youmi</extensionID>
+    </extensions>
+</application>
